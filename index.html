@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Catálogo digital demonstrativo com produtos, categorias, busca e pedidos pelo WhatsApp.">
+<title>Vitrine | Catálogo Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <a class="brand" href="#inicio">
+    <span class="brand-icon">V</span>
+    <span>VITRINE<small>CATÁLOGO DIGITAL</small></span>
+  </a>
+  <div class="header-actions">
+    <a href="#produtos">Produtos</a>
+    <a class="whatsapp-top" href="https://wa.me/5517999999999?text=Olá!%20Vim%20pelo%20catálogo%20e%20quero%20fazer%20um%20pedido." target="_blank">WhatsApp ↗</a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">CATÁLOGO ONLINE · 2026</p>
+    <h1>Escolha.<br><span>Peça.</span><br>Receba.</h1>
+    <p>Uma vitrine digital simples, bonita e feita para transformar visitas em pedidos.</p>
+    <a href="#produtos" class="hero-btn">Ver produtos <span>↓</span></a>
+  </div>
+  <div class="hero-card">
+    <span>DESTAQUE DA SEMANA</span>
+    <div class="hero-product"></div>
+    <div class="hero-product-info"><div><small>MAIS PEDIDO</small><h3>Kit Essential</h3></div><strong>R$ 89,90</strong></div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div><span>✓</span><div><strong>Compra fácil</strong><small>Escolha seu produto em poucos cliques.</small></div></div>
+  <div><span>✓</span><div><strong>Atendimento direto</strong><small>Seu pedido vai direto para o WhatsApp.</small></div></div>
+  <div><span>✓</span><div><strong>Compra segura</strong><small>Converse com a loja antes de finalizar.</small></div></div>
+</section>
+
+<section class="catalog" id="produtos">
+  <div class="catalog-head">
+    <div>
+      <p class="eyebrow dark">NOSSO CATÁLOGO</p>
+      <h2>Encontre o que<br><span>você procura.</span></h2>
+    </div>
+    <div class="search">
+      <span>⌕</span><input id="search" type="search" placeholder="Buscar produto..." oninput="filterProducts()">
+    </div>
+  </div>
+
+  <div class="categories" id="categories">
+    <button class="active" onclick="setCategory('Todos',this)">Todos</button>
+    <button onclick="setCategory('Destaques',this)">Destaques</button>
+    <button onclick="setCategory('Roupas',this)">Roupas</button>
+    <button onclick="setCategory('Acessórios',this)">Acessórios</button>
+    <button onclick="setCategory('Kits',this)">Kits</button>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+    <article class="product" data-category="Destaques Roupas" data-name="Camiseta Essential Preta">
+      <div class="product-image img1"><span>MAIS VENDIDO</span><button onclick="openProduct('Camiseta Essential Preta','R$ 59,90','Roupas')">+</button></div>
+      <div class="product-info"><div><small>ROUPAS</small><h3>Camiseta Essential Preta</h3><p>Algodão premium · P ao GG</p></div><strong>R$ 59,90</strong></div>
+    </article>
+
+    <article class="product" data-category="Destaques Roupas" data-name="Camiseta Oversized Off White">
+      <div class="product-image img2"><span>NOVO</span><button onclick="openProduct('Camiseta Oversized Off White','R$ 79,90','Roupas')">+</button></div>
+      <div class="product-info"><div><small>ROUPAS</small><h3>Oversized Off White</h3><p>Algodão 240g · Modelagem ampla</p></div><strong>R$ 79,90</strong></div>
+    </article>
+
+    <article class="product" data-category="Destaques Acessórios" data-name="Boné Urban Black">
+      <div class="product-image img3"><span>DESTAQUE</span><button onclick="openProduct('Boné Urban Black','R$ 49,90','Acessórios')">+</button></div>
+      <div class="product-info"><div><small>ACESSÓRIOS</small><h3>Boné Urban Black</h3><p>Ajustável · Bordado frontal</p></div><strong>R$ 49,90</strong></div>
+    </article>
+
+    <article class="product" data-category="Kits Destaques" data-name="Kit Essential">
+      <div class="product-image img4"><span>OFERTA</span><button onclick="openProduct('Kit Essential','R$ 89,90','Kits')">+</button></div>
+      <div class="product-info"><div><small>KITS</small><h3>Kit Essential</h3><p>Camiseta + boné · Edição especial</p></div><strong>R$ 89,90</strong></div>
+    </article>
+
+    <article class="product" data-category="Acessórios" data-name="Óculos Black Frame">
+      <div class="product-image img5"><span></span><button onclick="openProduct('Óculos Black Frame','R$ 69,90','Acessórios')">+</button></div>
+      <div class="product-info"><div><small>ACESSÓRIOS</small><h3>Óculos Black Frame</h3><p>Lentes UV · Armação leve</p></div><strong>R$ 69,90</strong></div>
+    </article>
+
+    <article class="product" data-category="Roupas" data-name="Calça Cargo Stone">
+      <div class="product-image img6"><span></span><button onclick="openProduct('Calça Cargo Stone','R$ 129,90','Roupas')">+</button></div>
+      <div class="product-info"><div><small>ROUPAS</small><h3>Calça Cargo Stone</h3><p>Sarja premium · Modelagem reta</p></div><strong>R$ 129,90</strong></div>
+    </article>
+  </div>
+  <div id="empty" class="empty">Nenhum produto encontrado. Tente outra busca.</div>
+</section>
+
+<section class="promo">
+  <div>
+    <p class="eyebrow">CONDIÇÃO ESPECIAL</p>
+    <h2>Seu próximo favorito<br><span>pode estar aqui.</span></h2>
+    <p>Chame a gente no WhatsApp para consultar tamanhos, disponibilidade e formas de pagamento.</p>
+    <a href="https://wa.me/5517999999999?text=Olá!%20Quero%20consultar%20os%20produtos%20do%20catálogo." target="_blank">Falar com a loja ↗</a>
+  </div>
+  <div class="promo-image"></div>
+</section>
+
+<section class="how">
+  <p class="eyebrow dark">COMO FUNCIONA</p>
+  <h2>Comprar pode ser<br><span>bem simples.</span></h2>
+  <div class="steps">
+    <div><b>01</b><strong>Escolha</strong><p>Encontre seu produto no catálogo.</p></div>
+    <div><b>02</b><strong>Chame</strong><p>Clique em comprar e fale pelo WhatsApp.</p></div>
+    <div><b>03</b><strong>Combine</strong><p>Confirme tamanho, pagamento e entrega.</p></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a class="brand" href="#inicio"><span class="brand-icon">V</span><span>VITRINE<small>CATÁLOGO DIGITAL</small></span></a>
+  <p>Projeto demonstrativo · 2026</p>
+  <a href="#inicio">Voltar ao topo ↑</a>
+</footer>
+
+<div class="modal" id="modal" onclick="closeModal(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="close" onclick="closeModal()">×</button>
+    <p class="eyebrow dark">SEU PEDIDO</p>
+    <h2 id="modalTitle">Produto</h2>
+    <p id="modalCategory"></p>
+    <strong id="modalPrice"></strong>
+    <label>Quantidade</label>
+    <div class="quantity"><button onclick="changeQty(-1)">−</button><span id="qty">1</span><button onclick="changeQty(1)">+</button></div>
+    <button class="modal-whatsapp" onclick="sendOrder()">Pedir pelo WhatsApp ↗</button>
+  </div>
+</div>
+
+<script>
+let currentProduct = '';
+let currentPrice = '';
+let currentQty = 1;
+let currentCategory = 'Todos';
+
+function setCategory(category, button){
+  currentCategory = category;
+  document.querySelectorAll('.categories button').forEach(b=>b.classList.remove('active'));
+  button.classList.add('active');
+  filterProducts();
+}
+
+function filterProducts(){
+  const search = document.getElementById('search').value.toLowerCase().trim();
+  let visible = 0;
+  document.querySelectorAll('.product').forEach(card=>{
+    const name = card.dataset.name.toLowerCase();
+    const cats = card.dataset.category;
+    const matchSearch = name.includes(search);
+    const matchCategory = currentCategory === 'Todos' || cats.includes(currentCategory);
+    card.style.display = matchSearch && matchCategory ? '' : 'none';
+    if(matchSearch && matchCategory) visible++;
+  });
+  document.getElementById('empty').style.display = visible ? 'none' : 'block';
+}
+
+function openProduct(name, price, category){
+  currentProduct=name; currentPrice=price; currentCategory=category; currentQty=1;
+  document.getElementById('modalTitle').textContent=name;
+  document.getElementById('modalPrice').textContent=price;
+  document.getElementById('modalCategory').textContent=category;
+  document.getElementById('qty').textContent='1';
+  document.getElementById('modal').classList.add('show');
+}
+function changeQty(amount){
+  currentQty=Math.max(1,currentQty+amount);
+  document.getElementById('qty').textContent=currentQty;
+}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+function sendOrder(){
+  const msg=`Olá! Vim pelo catálogo e quero pedir: ${currentProduct}. Quantidade: ${currentQty}. Preço anunciado: ${currentPrice}.`;
+  window.open(`https://wa.me/5517999999999?text=${encodeURIComponent(msg)}`,'_blank');
+}
+</script>
+</body>
+</html>
